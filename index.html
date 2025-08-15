@@ -1,4 +1,5 @@
 <html>
+ <!-- using https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28 --> 
   <body>
 You are here
     <script>
@@ -8,7 +9,8 @@ You are here
         let htmlString = '<ul>';
         
         for (let file of data) {
-          htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+          if (file.name.endsWith(".html"))
+            htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
         }
 
         htmlString += '</ul>';
