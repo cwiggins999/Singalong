@@ -13,11 +13,11 @@ You are here
             file.name = file.name.replace(".html", "").replace(/_/g, " ");
             finfo =  file.name;
             console.log(finfo);
-            fname = "test"
+            fname = file.name;
             //fname = finfo[0].trim();
             //fartist = finfo[1].trim();
             //htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
-            htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+            htmlString += `<li><a href="${file.path}">${fname}</a></li>`;
           }
         }
 
