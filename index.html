@@ -11,9 +11,9 @@ You are here
         for (let file of data) {
           if (file.name.endsWith(".html")) {
             file.name = file.name.replace(".html", "").replace(/_/g, " ");
-            finfo =  file.name;
+            finfo =  file.name.split('-');
             console.log(finfo);
-            fname = file.name;
+            fname = finfo[0];
             //fname = finfo[0].trim();
             //fartist = finfo[1].trim();
             //htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
