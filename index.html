@@ -1,6 +1,6 @@
 <html>
  <!-- using https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28 --> 
-  <body>
+  <body  width="90%">
 You are here
     <script>
       (async () => {
@@ -9,8 +9,12 @@ You are here
         let htmlString = '<ul>';
         
         for (let file of data) {
-          if (file.name.endsWith(".html"))
-            htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+          if (file.name.endsWith(".html")) {
+            file.name = file.name.replace(".html", "").replace(/_/g, " ");
+            finfo =  file.name.split["-"] ;
+            //htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+            htmlString += `<li><a href="${file.path}">${finfo[0]}</a></li>`;
+          }
         }
 
         htmlString += '</ul>';
