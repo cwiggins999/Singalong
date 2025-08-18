@@ -4,6 +4,12 @@
 You are here
     <script>
       (async () => {
+
+        function capitalizeWordsRegex(str) {
+          // Use a regular expression to match the first letter of each word (\b for word boundary, \w for word character)
+            return str.replace(/\b\w/g, char => char.toUpperCase()); 
+        }
+
         const response = await fetch('https://api.github.com/repos/cwiggins999/Singalong/contents/songs');
         const data = await response.json();
         let htmlString = '<ul>';
@@ -13,11 +19,12 @@ You are here
             file.name = file.name.replace(".html", "").replace(/_/g, " ");
             finfo =  file.name.split('-');
             console.log(finfo);
-            fname = finfo[0];
-            //fname = finfo[0].trim();
-            //fartist = finfo[1].trim();
-            //htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
-            htmlString += `<li><a href="${file.path}">${fname}</a></li>`;
+            fname = finfo[0].trim()
+            fname = capitalizeWordsRegex(fname);
+            fartist = finfo[1].trim();
+            fartist = capitalizeWordsRegex(fartist);
+
+            htmlString += `<h2><p><a href="${file.path}">${fname}</a> ${fartist}</p></h2>\n`;
           }
         }
 
