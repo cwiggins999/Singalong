@@ -15,7 +15,7 @@ You are here
         let htmlString = '<ul>';
         
         for (let file of data) {
-          if (file.name.endsWith(".html")) {
+          if (file.name.endsWith(".html") $$ file.name !== "index.html") {
             file.name = file.name.replace(".html", "").replace(/_/g, " ");
             finfo =  file.name.split('-');
             console.log(finfo);
