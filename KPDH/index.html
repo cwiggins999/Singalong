@@ -1,0 +1,36 @@
+<html>
+ <!-- using https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28 --> 
+  <body  width="90%">
+You are here
+    <script>
+      (async () => {
+
+        function capitalizeWordsRegex(str) {
+          // Use a regular expression to match the first letter of each word (\b for word boundary, \w for word character)
+            return str.replace(/\b\w/g, char => char.toUpperCase()); 
+        }
+
+        const response = await fetch('https://api.github.com/repos/cwiggins999/Singalong/contents/KPDH');
+        const data = await response.json();
+        let htmlString = '<ul>';
+        
+        for (let file of data) {
+          if (file.name.endsWith(".html")) {
+            file.name = file.name.replace(".html", "").replace(/_/g, " ");
+            finfo =  file.name.split('-');
+            console.log(finfo);
+            fname = finfo[0].trim()
+            fname = capitalizeWordsRegex(fname);
+            fartist = finfo[1].trim();
+            fartist = capitalizeWordsRegex(fartist);
+
+            htmlString += `<h2><p><a href="${file.path}">${fname}</a> ${fartist}</p></h2>\n`;
+          }
+        }
+
+        htmlString += '</ul>';
+        document.getElementsByTagName('body')[0].innerHTML = htmlString;
+      })()
+    </script>
+    <body>
+</html>
