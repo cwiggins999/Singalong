@@ -6,6 +6,7 @@
 .chordline {
 }
 .lyricsline {
+		font:bold 70% sans-serif;
 }
 A.chordlink {
 	text-decoration:none;
