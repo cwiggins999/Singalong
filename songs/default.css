@@ -11,6 +11,7 @@
 .chordline {
 }
 .lyricsline {
+	white-space: pre-line;
 }
 A.chordlink {
 	text-decoration:none;
