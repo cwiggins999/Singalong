@@ -23,10 +23,6 @@ h2 {
   margin-bottom: 0.1em;
   text-align: center;
 }
-table {
-  font-size: clamp(1rem, 4vw, 5rem);
-    width: clamp(300px, 80vw, 1200px);
-}
 .chord {
 	font:bold 70% sans-serif;
 	color:blue;
