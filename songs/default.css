@@ -1,7 +1,27 @@
-@media screen and (max-device-width: 480px){
-  body{
-    -webkit-text-size-adjust: 100%;
-  }
+body {
+      --element-width: 90vw;
+      width: var(--element-width);
+      outline: 1px solid grey;
+      
+      /* below divider value must be manually adjusted for
+         the wanted element width. */
+      font-size: calc(var(--element-width) / 30);
+      
+      word-break: break-all; /* for testing purpose only */
+    }
+h1 {
+  color: blue;
+  font-size: calc(var(--element-width) / 20);  
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  text-align: center;
+}
+h2 {
+  color: blue;
+  font-size: calc(var(--element-width) / 25);  
+    margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  text-align: center;
 }
 .chord {
 	font:bold 70% sans-serif;
@@ -10,14 +30,7 @@
 	}
 .chordline {
 }
-/* experiment with width
-table {
-  font-size: clamp(1rem, 4vw, 5rem);
-    width: clamp(300px, 80vw, 1200px);
-}
-*/
 .lyricsline {
-	white-space: pre-line;
 }
 A.chordlink {
 	text-decoration:none;
@@ -29,9 +42,6 @@ A.chordlink:hover {
 	color: white;
 	background-color: black;
 	margin-top:1em; padding:0 .5em;
-}
-.highlight {
-	background-color: yellow;
 }
 .chorus {
 	border-left: solid; 

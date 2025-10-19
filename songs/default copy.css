@@ -1,0 +1,39 @@
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: 100%;
+  }
+}
+.chord {
+	font:bold 70% sans-serif;
+	color:blue;
+	padding-right: 1ex;
+	}
+.chordline {
+}
+/* experiment with width
+table {
+  font-size: clamp(1rem, 4vw, 5rem);
+    width: clamp(300px, 80vw, 1200px);
+}
+*/
+.lyricsline {
+	white-space: pre-line;
+}
+A.chordlink {
+	text-decoration:none;
+	} 
+A.chordlink:hover {
+	text-decoration:underline;
+	} 
+.comment {
+	color: white;
+	background-color: black;
+	margin-top:1em; padding:0 .5em;
+}
+.highlight {
+	background-color: yellow;
+}
+.chorus {
+	border-left: solid; 
+	padding-left:1ex;
+}
