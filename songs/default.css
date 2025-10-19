@@ -10,10 +10,12 @@
 	}
 .chordline {
 }
+/* experiment with width
 table {
   font-size: clamp(1rem, 4vw, 5rem);
     width: clamp(300px, 80vw, 1200px);
 }
+*/
 .lyricsline {
 	white-space: pre-line;
 }
